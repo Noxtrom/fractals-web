@@ -44,7 +44,7 @@ body {
   background: #fff;
 }
 .barra-lateral-izquierda .fractales .fractal input[type="checkbox"]{
-  display: none;
+  /* display: none; */
 }
 .barra-lateral-izquierda .fractales .fractal .check {
   width: 5px;
