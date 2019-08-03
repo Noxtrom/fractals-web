@@ -5,21 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <!-- Font 'Audiowide Regular' from Google Fonts -->
+  <!-- Fuente 'Audiowide Regular' de Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+  <!-- Icon pack from Fontello -->
+  <!-- Paquete de iconos de Fontello -->
   <link rel="stylesheet" href="css/fontello.css">
+  <!-- My stylesheets -->
+  <!-- Mis hojas de estilos -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+  <!-- LEFT BAR -->
   <div class="barra-lateral-izquierda">
+    <!-- BRAND -->
     <div class="logo">
       <h1>FRACTALES</h1>
     </div>
+    <!-- MENU -->
     <nav class="fractales">
+      <!-- Menu #1 -->
       <label class="fractal" for="koch">
         <input type="checkbox" name="" id="koch">
         <div class="check"></div>
         Copo de nieve de Koch
       </label>
+      <!-- Menu #2 -->
       <label class="fractal" for="sierpinski">
         <input type="checkbox" name="" id="sierpinski">
         <div class="check"></div>
@@ -27,12 +38,17 @@
       </label>
     </nav>
   </div>
+  <!-- MAIN CONTENT -->
   <div class="contenido-principal">
+    <!-- TITLE -->
     <h2>&laquo;CANVAS&raquo;</h2>
     <canvas width="600" height="600" id="fractal"></canvas>
-    <p>Descubre más en: <a href="#">facebook.com/nekogirlslover</a></p>
+    <!-- FACEBOOK PAGE -->
+    <p>Descubre más en: <a href="https://www.facebook.com/nekogirlslover">facebook.com/nekogirlslover</a></p>
   </div>
+  <!-- RIGHT BAR -->
   <div class="barra-lateral-derecha">
+    <!-- PARAMETERS -->
     <div class="parametros">
       <h3>Parametros</h3>
       <form action="">
@@ -44,6 +60,7 @@
             <button type="button" id="btn-abajo"><i class="icon-down-dir"></i></button>
           </div>
         </div>
+        <!-- DRAWING BUTTON -->
         <button type="button" id="btn-dibujar">DIBUJAR</button>
       </form>
     </div>
@@ -51,6 +68,8 @@
       <p class="copyright">nekogirlslover © 2019</p>
     </footer>
   </div>
+  <!-- My script -->
+  <!-- Mi codigo -->
   <script src="js/codigo.js"></script>
 </body>
 </html>
