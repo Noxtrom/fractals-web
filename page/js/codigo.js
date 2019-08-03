@@ -24,10 +24,12 @@ var lienzo = dibujo.getContext("2d");
 // Variables globales
 var ancho = dibujo.width;
 var alto = dibujo.height;
-var x_0_inicial = 50;
-var x_n_inicial = ancho-50;
-var y_0_inicial = ancho/2;
-var y_n_inicial = ancho/2;
+var x_A = ancho/4;
+var y_A = ancho/3;
+var x_B = ancho*3/4;
+var y_B = ancho/3;
+var x_C = x_A + ( x_B - x_A ) / 2;
+var y_C = y_A + ( x_B - x_A ) * Math.sqrt(3) / 2;
 var color = "red";
 
 // Checkboxes
@@ -139,7 +141,9 @@ function dibujar(){
 
 function fractal_koch_0(){
   limpiarLienzo();
-  fractal_koch(nivel, color, x_0_inicial, y_0_inicial, x_n_inicial, y_n_inicial);
+  fractal_koch(nivel, color, x_A, y_A, x_B, y_B);
+  fractal_koch(nivel, color, x_B, y_B, x_C, y_C);
+  fractal_koch(nivel, color, x_C, y_C, x_A, y_A);
 }
 
 function fractal_koch(nivel,color,x_0, y_0, x_n, y_n) {
@@ -164,7 +168,7 @@ function fractal_koch(nivel,color,x_0, y_0, x_n, y_n) {
 
 function fractal_sierpinski_0(){
   limpiarLienzo();
-  fractal_sierpinski(nivel, color, x_0_inicial, y_0_inicial, x_n_inicial, y_n_inicial);
+  fractal_sierpinski(nivel, color, x_A, y_A, x_B, y_B);
 }
 
 function fractal_sierpinski(){
