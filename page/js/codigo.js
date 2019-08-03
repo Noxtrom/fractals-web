@@ -15,9 +15,13 @@
 // ELEMENTS
 // ELEMENTOS
 
+// Auxiliary
+// Auxiliares
+var dibujo = document.getElementById('fractal');
+var lienzo = dibujo.getContext("2d");
+
 // Global variables
 // Variables globales
-
 var ancho = dibujo.width;
 var alto = dibujo.height;
 var x_0_inicial = 50;
@@ -40,11 +44,6 @@ var txt_nivel = document.getElementById('nivel');
 var btn_aumentar = document.getElementById('btn-arriba');
 var btn_disminuir = document.getElementById('btn-abajo');
 var btn_dibujar = document.getElementById('btn-dibujar');
-
-// Auxiliary
-// Auxiliares
-var dibujo = document.getElementById('fractal');
-var lienzo = dibujo.getContext("2d");
 
 // Levels
 // ------
