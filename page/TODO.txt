@@ -1,0 +1,8 @@
+* Choose a color in 'Parametros'
+- Elegir color en 'Parametros'
+* Inverted Koch's Snowflake
+- Copo de nieve de Koch Inverso
+* Sierpinski's Triangle
+- Triangulo de Sierpinski
+* Frontend using Boostrap 4 (Responsive desing)
+- Frontend usando Bootstrap 4 (Diseño adaptable)
