@@ -22,27 +22,27 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-sm-auto barra-lateral-izquierda">
+			<div class="col-12 col-sm-auto px-0 barra-lateral-izquierda">
 				<!-- Brand / Logo -->
-				<div class="row justify-content-center logo bg-primary py-2 text-center text-white">
-					<a href="#">
-						<h1 class="m-0">FRACTALES</h1>
-					</a>
+				<div class="row justify-content-center logo bg-primary py-2 text-center text-white no-gutters">
+					<h3 class="m-0 d-sm-none">FRACTALES</h3>
+					<h3 class="m-0 d-none d-sm-block d-xl-none">F</h3>
+					<h1 class="m-0 d-none d-xl-block">FRACTALES</h1>
 				</div>
 				<!-- Nav / Menu -->
-				<form class="row flex-column" action="">
-					<div class="fractal active">
-						<img src="img/1.png" width="16px" height="16px" alt="">
+				<form class="row flex-sm-column no-gutters" action="">
+					<div class="col-4 col-sm fractal active">
+						<img id="img-1" src="img/1.png" width="16px" height="16px" alt="">
 						<input id="radio-1" type="radio" name="fractal" value="1" class="custom-control-input">
-						<label id="label-1" for="radio-1" class="custom-control-label py-3 pl-5 w-100"><span>Copo de Nieve de Koch</span></label>
+						<label id="label-1" for="radio-1" class="custom-control-label p-3 pl-5 w-100"><span>Copo de Nieve de Koch</span></label>
 					</div>
-					<div class="fractal">
-						<img src="img/20.png" width="16px" height="16px" alt="">
+					<div class="col-4 col-sm fractal">
+						<img id="img-2" src="img/20.png" width="16px" height="16px" alt="">
 						<input id="radio-2" type="radio" name="fractal" value="2" class="custom-control-input">
 						<label id="label-2" for="radio-2" class="custom-control-label p-3 pl-5 w-100"><span>Triangulo de Sierpinski</span></label>
 					</div>
-					<div class="fractal">
-						<img src="img/30.png" width="16px" height="16px" alt="">
+					<div class="col-4 col-sm fractal">
+						<img id="img-3" src="img/30.png" width="16px" height="16px" alt="">
 						<input id="radio-3" type="radio" name="fractal" value="3" class="custom-control-input">
 						<label id="label-3" for="radio-3" class="custom-control-label p-3 pl-5 w-100"><span>Copo de Nieve de Koch Invertido</span></label>
 					</div>
@@ -51,45 +51,97 @@
 			
 			<div class="col">
 				<div class="row">
-					<main class="col-md col-lg-8 dibujo-principal">
-						<div class="container-fluid d-flex flex-column justify-content-center">
+					<main class="order-2 order-lg-1 col-md col-xl-7 dibujo-principal">
+						<div class="container-fluid">
 							<!-- Title / Titulo -->
-							<div class="row">
-								<h2 class="col-12">&laquo;CANVAS&raquo;</h2>
+							<div class="row my-1 my-sm-2 my-md-3">
+								<h2 class="col-12" id="titulo">&laquo;Copo de Nieve de Koch&raquo;</h2>
 							</div>
 							<!-- Picture / Dibujo -->
-							<div class="row">
-								<canvas class="col-12" width="600" height="600" id="fractal"></canvas>
+							<div class="row mb-3 justify-content-center">
+								<canvas class="col-10 col-lg-12" width="600" height="600" id="fractal"></canvas>
 							</div>
 						</div>
+						<footer class="row justify-content-center d-lg-none">
+							<!-- Social Networks / Redes Sociales -->
+							<div class="col-12 redes-sociales">
+								<p class="facebook text-center">Descubre más en: <a href="https://www.facebook.com/nekogirlslover"
+										target="_blank">facebook.com/nekogirlslover</a></p>
+							</div>
+
+							<div class="col-12 text-center">
+								<span class="copyright">nekogirlslover &copy; 2019</span>
+							</div>
+						</footer>
 					</main>
 
-					<div class="col-md-4 col-lg-4 barra-lateral-derecha">
+					<div class="order-1 order-lg-2 col-12 col-lg-4 col-xl-5 barra-lateral-derecha">
 						<div class="row justify-content-center bg-dark text-white py-2 mb-3">
 							<h3 class="m-0">Parametros</h3>
 						</div>
 						<!-- Toolbar / Barra de Herramientas -->
 						<div class="row justify-content-center btn-toolbar mb-3" role="toolbar">
-							<label class="col-12" for="nivel">Nivel</label>
-							<div class="col-12 mb-3">
+							<div class="col-12 col-sm-6 col-lg-12">
 								<div class="row">
-									<div class="col">
-										<input class="form-control" type="text" name="nivel" id="nivel" placeholder="Nivel">
-									</div>
-									<div class="col-3 btn-group-vertical btn-group-sm pl-0">
-										<button class="btn btn-dark btn-nk" id="btn-arriba"><i class="icon-up-dir"></i></button>
-										<button class="btn btn-dark btn-nk" id="btn-abajo"><i class="icon-down-dir"></i></button>
+									<label class="col-12" for="nivel">Nivel :: 0 - 7</label>
+									<div class="col-12 mb-3">
+										<div class="row">
+											<div class="col">
+												<input class="form-control" type="text" name="nivel" id="nivel" placeholder="Nivel" value="0">
+											</div>
+											<div class="col-3 btn-group-vertical btn-group-sm pl-0">
+												<button class="btn btn-dark btn-nk" id="btn-arriba"><i class="icon-up-dir"></i></button>
+												<button class="btn btn-dark btn-nk" id="btn-abajo"><i class="icon-down-dir"></i></button>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="custom-control custom-check mb-3">
-								<input class="custom-control-input" type="checkbox" name="" id="check-auto">
-								<label class="custom-control-label" for="check-auto">Autodibujar</label>
+
+							<div class="col-12 col-sm-6 col-lg-12 mb-3">
+								<div class="row align-self-stretch">
+									<label class="col-12" for="nivel">Color</label>
+									<div class="col-12">
+										<input class="form-control" type="color" name="" id="entrada_color">
+									</div>
+								</div>
 							</div>
-							<button class="col-10 btn btn-primary btn-block" id="btn-dibujar">Dibujar</button>
+
+							<div class="col-12">
+								<div class="row">
+									<label class="col-12">Color :: RGB</label>
+									<div class="col-12 mb-3">
+										<div class="row rgba">
+											<div class="col">
+												<input class="form-control" type="text" name="rojo" id="rojo" placeholder="Rojo" value="0">
+											</div>
+											<div class="col">
+												<input class="form-control" type="text" name="verde" id="verde" placeholder="Verde" value="0">
+											</div>
+											<div class="col">
+												<input class="form-control" type="text" name="azul" id="azul" placeholder="Azulcol " value="0">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<div class="row">
+									<div class="col-12">
+										<div class="row justify-content-around align-items-center">
+											<div class="col-4 custom-control custom-check mb-md-3 text-center">
+												<input class="custom-control-input" type="checkbox" name="" id="check-auto">
+												<label class="custom-control-label" for="check-auto">Autodibujar</label>
+											</div>
+											<button class="col-4 col-lg-10 btn btn-primary btn-lg-block" id="btn-dibujar">Dibujar</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 
-						<footer class="row justify-content-center">
+						<footer class="row justify-content-center d-none d-lg-block">
 							<!-- Social Networks / Redes Sociales -->
 							<div class="col-12 redes-sociales">
 								<p class="facebook text-center">Descubre más en: <a href="https://www.facebook.com/nekogirlslover" target="_blank">facebook.com/nekogirlslover</a></p>
@@ -111,6 +163,5 @@
 	<!-- My script -->
 	<!-- My codigo -->
 	<script src="js/parametros.js"></script>
-	<script src="js/menu.js"></script>
 </body>
 </html>
