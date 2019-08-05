@@ -60,10 +60,7 @@ canvas {
   font-size: 14px;
   line-height: 14px;
 }
-@media screen and (max-width: 1250px){
-  .barra-lateral-izquierda .logo {
-    display: none;
-  }
+@media screen and (max-width: 1199px){
   .barra-lateral-izquierda form .fractal img {
     top: 0;
     left: 50%;
@@ -71,5 +68,15 @@ canvas {
   }
   .barra-lateral-izquierda form label span {
     display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .barra-lateral-derecha {
+    min-height: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .barra-lateral-izquierda {
+    min-height: auto;
   }
 }
