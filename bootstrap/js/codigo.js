@@ -65,7 +65,7 @@ var btn_dibujar = document.getElementById('btn-dibujar');
 var nivel_max = 7;
 var nivel_min = 0;
 var nivel = txt_nivel.value;
-if (nivel.value==""){
+if (nivel.value===""){
   nivel = nivel_min;
 }
 
