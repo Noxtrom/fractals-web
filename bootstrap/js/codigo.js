@@ -26,8 +26,8 @@ var ancho = dibujo.width;
 var alto = dibujo.height;
 var x_A = ancho/4;
 var y_A = ancho/3;
-var x_B = ancho*3/4;
-var y_B = ancho/3;
+var x_B = ancho - x_A;
+var y_B = y_A;
 var x_C = x_A + ( x_B - x_A ) / 2;
 var y_C = y_A + ( x_B - x_A ) * Math.sqrt(3) / 2;
 var color = "black";
@@ -62,7 +62,7 @@ var btn_dibujar = document.getElementById('btn-dibujar');
 // El codigo del Copo de Nieve de Koch genera ( 4 ^ nivel + 1 ) puntos, por eso no es recomendable
 // dibujar a un nivel muy alto pues puede hacer que el navegador crashee
 
-var nivel_max = 8;
+var nivel_max = 7;
 var nivel_min = 0;
 var nivel = txt_nivel.value;
 if (nivel.value==""){
@@ -116,20 +116,20 @@ function limpiarLienzo(){
 function aumentar(){
   if(nivel<nivel_max){
     nivel++;
-  }
-  txt_nivel.value=nivel;
-  if(check_auto.checked){
-    dibujar();
+    txt_nivel.value=nivel;
+    if(check_auto.checked){
+      dibujar();
+    }
   }
 }
 
 function disminuir(){
   if(nivel>nivel_min){
     nivel--;
-  }
-  txt_nivel.value=nivel;
-  if(check_auto.checked){
-    dibujar();
+    txt_nivel.value=nivel;
+    if(check_auto.checked){
+      dibujar();
+    }
   }
 }
 
