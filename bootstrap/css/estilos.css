@@ -6,33 +6,33 @@ body {
   color: #fff;
   min-height: 100vh;
 }
-.barra-lateral-izquierda .logo {
-  background: #126dc1;
-}
 .barra-lateral-izquierda .logo a {
   text-decoration: none;
   color: #fff;
 }
 .barra-lateral-izquierda form .fractal {
   position: relative;
+  cursor: pointer;
 }
 .barra-lateral-izquierda form .fractal img {
   width: 32px;
   height: 32px;
-  z-index: 50;
   position: absolute;
   top: 50%;
   left: 8px;
   transform: translateY(-50%);
 }
-.barra-lateral-izquierda form label {
-  border-bottom: 1px solid #fff;
-}
-.barra-lateral-izquierda form label:hover,
-.barra-lateral-izquierda form label.active {
+.barra-lateral-izquierda form .fractal.active {
   background: #fff;
   color: #000;
+}
+.barra-lateral-izquierda form label {
+  border-bottom: 1px solid #fff;
   cursor: pointer;
+}
+.barra-lateral-izquierda form label:hover {
+  background: #fff;
+  color: #000;
 }
 .barra-lateral-izquierda form label::before,
 .barra-lateral-izquierda form label::after {
@@ -59,4 +59,17 @@ canvas {
   padding: 0;
   font-size: 14px;
   line-height: 14px;
+}
+@media screen and (max-width: 1250px){
+  .barra-lateral-izquierda .logo {
+    display: none;
+  }
+  .barra-lateral-izquierda form .fractal img {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .barra-lateral-izquierda form label span {
+    display: none;
+  }
 }
