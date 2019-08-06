@@ -65,6 +65,7 @@ var check_auto = document.getElementById('check-auto');
 var btn_aumentar = document.getElementById('btn-arriba');
 var btn_disminuir = document.getElementById('btn-abajo');
 var btn_dibujar = document.getElementById('btn-dibujar');
+var btn_menu = document.getElementById('btn-menu');
 
 // Auxiliary 2
 // Auxiliares 2
@@ -72,6 +73,13 @@ var menu = [radio_1.parentElement, radio_2.parentElement, radio_3.parentElement]
 var nombre = document.getElementById('titulo');
 var fractales = ["Copo de Nieve de Koch", "Triangulo de Sierpinski", "Copo de Nieve de Koch Invertido"];
 var num = 0;
+var menu_parametros = document.getElementById('parametros');
+var altura_parametros = menu_parametros.offsetHeight + "px";
+console.log("La altura inicial de parametros es: "+altura_parametros);
+if(screen.width<576){
+  menu_parametros.style.maxHeight = 0;
+  console.log("xs");
+}
 
 // Images
 // Imagenes
@@ -113,6 +121,7 @@ check_auto.checked = "true";
 btn_dibujar.addEventListener('click', dibujar);
 btn_aumentar.addEventListener('click', aumentar);
 btn_disminuir.addEventListener('click', disminuir);
+btn_menu.addEventListener('click', mostrar);
 
 // Color Events
 // Eventos Color
@@ -146,6 +155,12 @@ function dibujarLinea(color,x_0,y_0,x_n,y_n){
 // Funciones auxiliares
 
 function leer(){
+  if(txt_nivel.value>nivel_max){
+    txt_nivel.value=nivel_max;
+  }
+  if(txt_nivel.value<nivel_min){
+    txt_nivel.value=nivel_min;
+  }
   nivel=txt_nivel.value;
 }
 
@@ -224,6 +239,18 @@ for (var i = 0; i < menu.length; i++) {
   console.log("Evento 1-" + (i + 1) + " añadido");
 }
 
+// Parameters' Button Function
+// Funcion del Boton de Parametros
+
+function mostrar(){
+  var mh = menu_parametros.style.maxHeight;
+  console.log(mh);
+  mh = (mh == "" || mh == "0px") ? altura_parametros : "0px";
+  console.log(mh);
+  menu_parametros.style.maxHeight = mh;
+  console.log(menu_parametros.style.maxHeight);
+}
+
 // Color Functions
 // Funciones de color
 
@@ -260,7 +287,7 @@ function elegir_color_rgb(){
   console.log("color actualizado: " + color);
 }
 
-// This functions: hexToRgb and rgbToHex, are from coderwall.com and campushippo.com respectively
+// Those functions: hexToRgb and rgbToHex, are from coderwall.com and campushippo.com respectively
 // Estas funciones: hexToRgb y rgbToHex son de coderwall.com y campushippo.com respectivamente
 
 function hexToRgb(color) {
