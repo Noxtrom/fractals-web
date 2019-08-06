@@ -54,6 +54,9 @@ canvas {
 }
 .barra-lateral-derecha .btn-toolbar {
   flex-grow: 1;
+  width: auto;
+  overflow: hidden;
+  transition: all ease .6s;
 }
 .barra-lateral-derecha .btn-toolbar .btn-nk {
   padding: 0;
